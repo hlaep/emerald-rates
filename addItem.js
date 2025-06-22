@@ -1,6 +1,6 @@
 import { storeData, retrieveData } from './fileSystem.js'
 
-const addItemRate = async (name, amount, emeraldValue) => {
+export const addItemRate = async (name, amount, emeraldValue) => {
   try {
     const items = await retrieveData('item-rates.json')
     if (checkDuplicate(items, name)) {
@@ -29,7 +29,7 @@ if (itemName && itemAmount && emeraldValue) {
   if (isNaN(itemAmount)) {
     console.log('Item value should be a number!')
   } else if (isNaN(emeraldValue)) {
-    console.log('Value should be a number!')
+    console.log('Emerald value should be a number!')
   } else {
     addItemRate(itemName, itemAmount, emeraldValue)
   }
