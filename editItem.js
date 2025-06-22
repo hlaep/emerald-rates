@@ -1,12 +1,11 @@
-import { storeData, retrieveData } from './fileSystem.js'
 import { addItemRate } from './addItem.js'
+import { deleteItem } from './deleteItem.js'
 
 const editItem = async (name, amount, emeraldValue) => {
   try {
-    const list = await retrieveData('item-rates.json')
-    const newList = list.filter(item => item.name !== name)
-    await storeData('item-rates.json', newList)
+    await deleteItem(name)
     await addItemRate(name, amount, emeraldValue)
+    console.log(`Successfully updated ${name} in item-rates.js`)
   } catch (err) {
     console.error('Error trying to edit item: ', err)
   }
