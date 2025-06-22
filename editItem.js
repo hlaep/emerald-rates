@@ -25,6 +25,6 @@ if (itemName && itemAmount && emeraldValue) {
   }
 } else {
   console.log(
-    "You did not provide all arguments, you should execute 'addItem.js <itemName> <itemAmound> <emeraldValue>'"
+    "You did not provide all arguments, you should execute 'addItem.js <itemName> <itemAmound> <emeraldValue>' or the item does not exist"
   )
 }

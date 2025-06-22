@@ -13,4 +13,8 @@ export const deleteItem = async name => {
 
 const itemName = process.argv[2]
 
-deleteItem(itemName)
+if (itemName) {
+  deleteItem(itemName)
+} else {
+  console.log('This item does not exist.')
+}
